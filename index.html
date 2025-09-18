@@ -1,3 +1,46 @@
-def
-/////
-commit lan 4
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đổi màu nền</title>
+  <style>
+    body {
+      text-align: center;
+      padding-top: 100px;
+      transition: background-color 0.5s ease;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #colorCode {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="changeColor()">Đổi màu nền</button>
+  <div id="colorCode">Mã màu: #ffffff</div>
+
+  <script>
+    function changeColor() {
+      // Tạo màu ngẫu nhiên dạng #RRGGBB (6 ký tự)
+      const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+      document.body.style.backgroundColor = randomColor;
+      // Hiển thị mã màu
+      document.getElementById('colorCode').textContent = 'Mã màu: ' + randomColor.toUpperCase();
+    }
+  </script>
+</body>
+</html>
